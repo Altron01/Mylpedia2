@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "913378561108",
+    "firebase_url": "https://mylpedia2-36f8b.firebaseio.com",
+    "project_id": "mylpedia2-36f8b",
+    "storage_bucket": "mylpedia2-36f8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913378561108:android:9a12e3034c10bb0a",
+        "android_client_info": {
+          "package_name": "com.altron.mylpedia2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913378561108-rgl4j02jqculifdrgfima5b9st5r5cln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPtpzSJswTPlcfndMJ6b4memwUYdqEypE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

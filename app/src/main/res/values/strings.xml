@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Mylpedia</string>
+    <string name="edicion_agui">Águila Imperial</string>
+    <string name="edicion_contra">Contra Ataque</string>
+    <string name="edicion_dom">Dominio</string>
+    <string name="edicion_sol_naci">Sol Naciente</string>
+    <string name="edicion_bushi">Bushido</string>
+    <string name="edicion_grimo">Grimorio</string>
+    <string name="edicion_templa">Templarios</string>
+    <string name="edicion_camelot">Camelot</string>
+    <string name="edicion_tesoro">Tesoro Vikingo</string>
+    <string name="edicion_midgard">Midgard</string>
+    <string name="edicion_asgard">Asgard</string>
+    <string name="edicion_reliquias">Reliquias de Dragón</string>
+    <string name="edicion_rebelion">Sumeria Rebelión</string>
+    <string name="edicion_sumeria">Sumeria</string>
+    <string name="edicion_furia_ex">Furia Extensión</string>
+    <string name="edicion_furia">Furia</string>
+    <string name="cartas_selec">Selección</string>
+    <string name="error_txt">Error</string>
+
+    <string-array name="list_edition">
+        <item>-------Todas-------</item>
+        <item>Águila Imperial</item>
+        <item>ContraAtaque</item>
+        <item>Dominio</item>
+        <item>Sol Naciente</item>
+        <item>Bushido</item>
+        <item>Grimorio</item>
+        <item>Templarios</item>
+        <item>Camelot</item>
+        <item>Tesoro Vikingo</item>
+        <item>Midgard</item>
+        <item>Asgard</item>
+        <item>Reliquias de Dragón</item>
+        <item>Sumeria Rebelión</item>
+        <item>Sumeria</item>
+        <item>Furia Extensión</item>
+        <item>Furia</item>
+    </string-array>
+
+    <string-array name="list_num">
+        <item>-------Todas-------</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="list_class">
+        <item>-------Todas-------</item>
+        <item>Aliado</item>
+        <item>Tótem</item>
+        <item>Talismán</item>
+        <item>Arma</item>
+        <item>Oro</item>
+    </string-array>
+
+    <string-array name="list_race">
+        <item>-------Todas-------</item>
+        <item>Ancestral</item>
+        <item>Bárbaro</item>
+        <item>Bestia</item>
+        <item>Caballero</item>
+        <item>Dragón</item>
+        <item>Eterno</item>
+        <item>Faerie</item>
+        <item>Guerrero</item>
+        <item>Héroe</item>
+        <item>Oni</item>
+        <item>Sumeria</item>
+        <item>Sacerdote</item>
+        <item>Samurai</item>
+        <item>Sombra</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_welcome__screen">Welcome_Screen</string>
+</resources>

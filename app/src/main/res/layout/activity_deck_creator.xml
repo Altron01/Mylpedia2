@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:id="@+id/dc_layout_deck_creator"
+    android:background="@drawable/img_background">
+    <include
+        android:id = "@+id/toolbar"
+        layout="@layout/toolbar"/>
+    <LinearLayout
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_below="@id/toolbar"
+        android:id="@+id/dc_layout_searcher"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="Edicion:"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dc_txt_edition" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dc_txt_edition"
+                android:entries="@array/list_edition"
+                android:id="@+id/dc_spn_edition"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="Tipo:"
+                android:textColor="@color/colorBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:id="@+id/dc_txt_class" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/dc_txt_class"
+                android:entries="@array/list_class"
+                android:id="@+id/dc_spn_class" />
+        </RelativeLayout>
+    </LinearLayout>
+    <Button
+        android:text="Terminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dc_btn_finish"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nombre de Mazo"
+        android:gravity="center_horizontal"
+        android:ems="10"
+        android:layout_above="@id/dc_btn_finish"
+        android:id="@+id/dc_edit_deck_name" />
+    <LinearLayout
+        android:weightSum="5"
+        android:baselineAligned="false"
+        android:layout_below="@id/dc_layout_searcher"
+        android:layout_above="@id/dc_edit_deck_name"
+        android:id="@+id/creador_layout_cartas"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <GridView
+            android:layout_weight="3"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:numColumns="2"
+            android:id="@+id/dc_grid_all_cards"/>
+        <LinearLayout
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cartas: "
+                android:id="@+id/dc_txt_cards"
+                android:gravity="center_horizontal"/>
+            <Button
+                android:text="Ver Mazo"
+                android:textColor="@color/colorBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dc_btn_view_deck"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

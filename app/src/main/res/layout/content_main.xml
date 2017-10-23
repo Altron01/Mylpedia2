@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.altron.mylpedia2.Activity.Main_Screen"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:background="#07000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="23sp"
+        android:id="@+id/mas_txt_edition"
+        android:gravity="center"/>
+
+    <GridView
+        android:layout_width="wrap_content"
+        android:id="@+id/mas_grid_cards"
+        android:numColumns="2"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mas_txt_edition"
+        android:layout_alignParentStart="true"/>
+</RelativeLayout>

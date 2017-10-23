@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Busqueda">
+        <menu>
+            <item
+                android:id="@+id/nav_edicion"
+                android:title="Edicion:"
+                app:actionLayout="@layout/spn_edicion"/>
+            <item
+                android:id="@+id/nav_coste"
+                android:title="Coste:"
+                app:actionLayout="@layout/spn_coste" />
+            <item
+                android:id="@+id/nav_clase"
+                android:title="Clase:"
+                app:actionLayout="@layout/spn_clase" />
+            <item
+                android:id="@+id/nav_fuerza"
+                android:title="Fuerza:"
+                app:actionLayout="@layout/spn_fuerza" />
+            <item
+                android:id="@+id/nav_raza"
+                android:title="Raza:"
+                app:actionLayout="@layout/spn_raza"/>
+        </menu>
+    </item>
+    <item android:title="Deck">
+        <menu>
+            <item
+                android:id="@+id/nav_my_decks"
+                android:title="Mis Decks"
+                />
+            <item
+                android:id="@+id/nav_deck_creator"
+                android:title="Creador de Decks"
+                />
+        </menu>
+    </item>
+</menu>
