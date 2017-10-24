@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.altron.mylpedia2.Activity.Deck_Creator;
 import com.altron.mylpedia2.Misc.Custom_Classes.Card;
 import com.altron.mylpedia2.Misc.Custom_Classes.Card_Holder;
 import com.altron.mylpedia2.Misc.Custom_Classes.Deck;
@@ -59,13 +58,13 @@ public class DB_Handler extends SQLiteOpenHelper {
         return mInstance;
     }
 
-    public void insert_card(List<Card_Holder> deck, int deck_id){
+    public void insert_card(List<Card_Holder> deck, int deckId){
         SQLiteDatabase bd =  getWritableDatabase();
         for(Card_Holder card : deck){
             ContentValues values = new ContentValues();
             values.put(CARD_ID, card.card.getId());
             values.put(CARD_QUANTITY, card.quantity);
-            values.put(DECK_ID, deck_id);
+            values.put(DECK_ID, deckId);
             bd.insert(CARD_TABLE, null, values);
         }
         bd.close();

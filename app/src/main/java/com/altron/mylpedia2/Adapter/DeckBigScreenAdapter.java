@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.altron.mylpedia2.Misc.Custom_Classes.Card;
 import com.altron.mylpedia2.Misc.Custom_Classes.Card_Holder;
 import com.altron.mylpedia2.R;
 import com.android.volley.toolbox.ImageLoader;
@@ -23,11 +22,11 @@ import java.util.List;
 public class Deck_Big_Screen_Adapter extends ArrayAdapter<Card_Holder> {
 
     private ImageLoader imageLoader;
-    private List<Card_Holder> Card_List;
+    private List<Card_Holder> cardList;
 
-    public Deck_Big_Screen_Adapter(Context context, int resources, List<Card_Holder> Card_List, ImageLoader imageLoader) {
-        super(context, resources, Card_List);
-        this.Card_List = new ArrayList<>(Card_List);
+    public Deck_Big_Screen_Adapter(Context context, int resources, List<Card_Holder> cardList, ImageLoader imageLoader) {
+        super(context, resources, cardList);
+        this.cardList = new ArrayList<>(cardList);
         this.imageLoader = imageLoader;
     }
 
@@ -40,13 +39,13 @@ public class Deck_Big_Screen_Adapter extends ArrayAdapter<Card_Holder> {
             itemView =  inflater.inflate(R.layout.content_deck_big_view, parent, false);
         }
 
-        NetworkImageView Network_Image = (NetworkImageView) itemView.findViewById(R.id.db_network_image);
-        Network_Image.setDefaultImageResId(R.drawable.img_logo_small);
-        Network_Image.setErrorImageResId(R.drawable.img_error);
-        Network_Image.setAdjustViewBounds(true);
-        Network_Image.setImageUrl(Card_List.get(position).card.getUrl(), imageLoader);
-        TextView Txt_Count = (TextView) itemView.findViewById(R.id.db_txt_count);
-        Txt_Count.setText(" x" + Card_List.get(position).quantity);
+        NetworkImageView networkImage = (NetworkImageView) itemView.findViewById(R.id.db_network_image);
+        networkImage.setDefaultImageResId(R.drawable.img_logo_small);
+        networkImage.setErrorImageResId(R.drawable.img_error);
+        networkImage.setAdjustViewBounds(true);
+        networkImage.setImageUrl(cardList.get(position).card.getUrl(), imageLoader);
+        TextView txtCount = (TextView) itemView.findViewById(R.id.db_txt_count);
+        txtCount.setText(" x" + cardList.get(position).quantity);
         return itemView;
     }
 }

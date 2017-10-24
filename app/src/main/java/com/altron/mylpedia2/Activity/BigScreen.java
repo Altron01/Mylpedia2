@@ -26,11 +26,11 @@ public class Big_Screen extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             Bundle extras = getIntent().getExtras();
 
-            NetworkImageView Network_Image = (NetworkImageView) findViewById(R.id.bs_network_image);
-            Network_Image.setDefaultImageResId(R.drawable.img_logo_small);
-            Network_Image.setErrorImageResId(R.drawable.img_error);
-            Network_Image.setAdjustViewBounds(true);
-            Network_Image.setImageUrl(extras.getString("url"), Singleton.getInstance(this).getImageLoader());
+            NetworkImageView networkImage = (NetworkImageView) findViewById(R.id.bs_network_image);
+            networkImage.setDefaultImageResId(R.drawable.img_logo_small);
+            networkImage.setErrorImageResId(R.drawable.img_error);
+            networkImage.setAdjustViewBounds(true);
+            networkImage.setImageUrl(extras.getString("url"), Singleton.getInstance(this).getImageLoader());
 
             ((TextView) findViewById(R.id.bs_txt_name)).setText(extras.getString("name"));
             ((TextView) findViewById(R.id.bs_txt_class)).setText("Tipo: " + extras.getString("_class"));
@@ -38,11 +38,11 @@ public class Big_Screen extends AppCompatActivity {
             ((TextView) findViewById(R.id.bs_txt_edition)).setText("Edición: " + extras.getString("edition"));
             ((TextView) findViewById(R.id.bs_txt_cost)).setText("Coste: " + Integer.toString(extras.getInt("cost")));
 
-            TextView Txt_Strength = (TextView) findViewById(R.id.bs_txt_strength);
+            TextView txtStrength = (TextView) findViewById(R.id.bs_txt_strength);
             if(extras.getInt("strength") != -1)
-                Txt_Strength.setText("Fuerza: " + Integer.toString(extras.getInt("strength")));
+                txtStrength.setText("Fuerza: " + Integer.toString(extras.getInt("strength")));
             else
-                Txt_Strength.setVisibility(View.GONE);
+                txtStrength.setVisibility(View.GONE);
 
             ((TextView) findViewById(R.id.bs_txt_ability_text)).setText(extras.getString("ability"));
         }

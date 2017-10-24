@@ -21,10 +21,10 @@ import butterknife.ButterKnife;
 
 public class My_Deck extends AppCompatActivity {
 
-    @BindView(R.id.dp_list_decks)   ListView List_Decks;
-    @BindView(R.id.dp_btn_new_deck) Button Btn_New_Deck;
-    List<String> List_Deck_Names;
-    DB_Handler db_handler;
+    @BindView(R.id.dp_list_decks)   ListView listDecks;
+    @BindView(R.id.dp_btn_new_deck) Button btnNewDeck;
+    List<String> listDeckNames;
+    DB_Handler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,37 +41,37 @@ public class My_Deck extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        db_handler = DB_Handler.getInstance(My_Deck.this);
+        dbHandler = DB_Handler.getInstance(My_Deck.this);
 
-        List_Deck_Names = new ArrayList<>(db_handler.get_deck_names());
+        listDeckNames = new ArrayList<>(dbHandler.get_deck_names());
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, List_Deck_Names);
-        List_Decks.setAdapter(arrayAdapter);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listDeckNames);
+        listDecks.setAdapter(arrayAdapter);
 
-        List_Decks.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listDecks.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                db_handler.delete_deck(List_Decks.getItemAtPosition(i).toString());
-                arrayAdapter.remove(List_Decks.getItemAtPosition(i).toString());
-                List_Decks.setAdapter(arrayAdapter);
+                dbHandler.delete_deck(listDecks.getItemAtPosition(i).toString());
+                arrayAdapter.remove(listDecks.getItemAtPosition(i).toString());
+                listDecks.setAdapter(arrayAdapter);
                 return false;
             }
         });
-        List_Decks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listDecks.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(My_Deck.this, Deck_Creator.class);
-                intent.putExtra("Name", List_Deck_Names.get(i));
-                db_handler.close();
+                Intent intent = new Intent(My_Deck.this, DeckCreator.class);
+                intent.putExtra("Name", listDeckNames.get(i));
+                dbHandler.close();
                 startActivity(intent);
             }
         });
-        Btn_New_Deck.setOnClickListener(new View.OnClickListener() {
+        btnNewDeck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(My_Deck.this, Deck_Creator.class);
+                Intent intent = new Intent(My_Deck.this, DeckCreator.class);
                 intent.putExtra("Name", "Error");
-                db_handler.close();
+                dbHandler.close();
                 startActivity(intent);
             }
         });
@@ -80,6 +80,6 @@ public class My_Deck extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        db_handler.close();
+        dbHandler.close();
     }
 }
